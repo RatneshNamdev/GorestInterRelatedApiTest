@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="1" total="3" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="6280" started-at="2022-04-16T00:12:52 IST" finished-at="2022-04-16T00:12:58 IST">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="6280" started-at="2022-04-16T00:12:52 IST" finished-at="2022-04-16T00:12:58 IST">
+      <class name="com.liseinfotech.gorestApiTest.GorestApiTest">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.liseinfotech.gorestApiTest.GorestApiTest@7fac631b]" name="beforeSuite" is-config="true" duration-ms="999" started-at="2022-04-16T00:12:51 IST" finished-at="2022-04-16T00:12:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="getUserDetails()[pri:0, instance:com.liseinfotech.gorestApiTest.GorestApiTest@7fac631b]" name="getUserDetails" duration-ms="3558" started-at="2022-04-16T00:12:52 IST" finished-at="2022-04-16T00:12:56 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUserDetails -->
+        <test-method status="PASS" signature="postCreateNewUser()[pri:1, instance:com.liseinfotech.gorestApiTest.GorestApiTest@7fac631b]" name="postCreateNewUser" duration-ms="2676" started-at="2022-04-16T00:12:56 IST" finished-at="2022-04-16T00:12:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postCreateNewUser -->
+      </class> <!-- com.liseinfotech.gorestApiTest.GorestApiTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
