@@ -11,9 +11,10 @@ import lombok.ToString;
 @Setter
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UsersDataGet {
+public class UsersDataPosts {
 
     private int id;
     private int user_id;
     private String title;
+    private String body;
 }

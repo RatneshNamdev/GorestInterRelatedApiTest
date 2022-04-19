@@ -6,14 +6,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.ArrayList;
-
 @NoArgsConstructor
 @ToString
 @Setter
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserDataForGet {
+public class TodosPostData {
 
-    private ArrayList<UserData> data;
+    private int id;
+    private int user_id;
+    private String title;
+    private String due_on;
+    private String status;
 }
