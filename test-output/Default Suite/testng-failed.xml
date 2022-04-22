@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
+  <test thread-count="5" name="GorestInterRelatedApiTest(failed)">
+    <classes>
+      <class name="com.liseinfotech.gorestApiTest.GorestApiTest">
+        <methods>
+          <include name="getCommentsByUserId"/>
+          <include name="getTodosUserById"/>
+          <include name="createUserThroughPost"/>
+          <include name="invalidRequestThroughUsers"/>
+          <include name="postsNewUser"/>
+          <include name="commentsOnNewUser"/>
+          <include name="todosNewUser"/>
+          <include name="getPostsById"/>
+          <include name="deletePostsById"/>
+          <include name="getUserByUserId"/>
+          <include name="deleteCommentsByUserId"/>
+          <include name="updateTodosUserById"/>
+          <include name="deleteTodosUserById"/>
+          <include name="updateCommentsByUserId"/>
+          <include name="updatePostsById"/>
+          <include name="deleteUserByUserId"/>
+          <include name="beforeSuite"/>
+          <include name="updateUserByUserId"/>
+        </methods>
+      </class> <!-- com.liseinfotech.gorestApiTest.GorestApiTest -->
+    </classes>
+  </test> <!-- GorestInterRelatedApiTest(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

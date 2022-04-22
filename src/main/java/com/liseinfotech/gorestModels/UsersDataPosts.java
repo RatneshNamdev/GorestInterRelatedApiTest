@@ -1,4 +1,4 @@
-package com.liseinfotech.gorestApiTest;
+package com.liseinfotech.gorestModels;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;

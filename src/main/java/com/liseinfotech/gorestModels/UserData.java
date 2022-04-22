@@ -1,4 +1,4 @@
-package com.liseinfotech.gorestApiTest;
+package com.liseinfotech.gorestModels;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
@@ -11,11 +11,11 @@ import lombok.ToString;
 @Setter
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CommentsPostData {
+public class UserData {
 
     private int id;
-    private int post_id;
     private String name;
     private String email;
-    private String body;
+    private String gender;
+    private String status;
 }

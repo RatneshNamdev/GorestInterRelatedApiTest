@@ -1,4 +1,4 @@
-package com.liseinfotech.gorestApiTest;
+package com.liseinfotech.gorestApiTest.steps;
 
 
 import com.liseinfotech.gorestApiTest.common.ApplicationProperties;

@@ -2,83 +2,83 @@
 <testng-results skipped="0" failed="0" ignored="0" total="17" passed="17">
   <reporter-output>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="21072" started-at="2022-04-20T02:14:54 IST" finished-at="2022-04-20T02:15:15 IST">
+  <suite name="Default Suite" duration-ms="20617" started-at="2022-04-23T00:35:14 IST" finished-at="2022-04-23T00:35:35 IST">
     <groups>
     </groups>
-    <test name="GorestInterRelatedApiTest" duration-ms="21072" started-at="2022-04-20T02:14:54 IST" finished-at="2022-04-20T02:15:15 IST">
+    <test name="GorestInterRelatedApiTest" duration-ms="20617" started-at="2022-04-23T00:35:14 IST" finished-at="2022-04-23T00:35:35 IST">
       <class name="com.liseinfotech.gorestApiTest.GorestApiTest">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="beforeSuite" is-config="true" duration-ms="890" started-at="2022-04-20T02:14:53 IST" finished-at="2022-04-20T02:14:54 IST">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="beforeSuite" is-config="true" duration-ms="928" started-at="2022-04-23T00:35:13 IST" finished-at="2022-04-23T00:35:14 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="postCreateNewUser()[pri:1, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="postCreateNewUser" duration-ms="4475" started-at="2022-04-20T02:14:54 IST" finished-at="2022-04-20T02:14:59 IST">
+        <test-method status="PASS" signature="createUserThroughPost()[pri:1, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="createUserThroughPost" duration-ms="3817" started-at="2022-04-23T00:35:14 IST" finished-at="2022-04-23T00:35:18 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postCreateNewUser -->
-        <test-method status="PASS" signature="getUserDetails()[pri:2, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="getUserDetails" duration-ms="1263" started-at="2022-04-20T02:14:59 IST" finished-at="2022-04-20T02:15:00 IST">
+        </test-method> <!-- createUserThroughPost -->
+        <test-method status="PASS" signature="getUserByUserId()[pri:2, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="getUserByUserId" duration-ms="1367" started-at="2022-04-23T00:35:18 IST" finished-at="2022-04-23T00:35:20 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getUserDetails -->
-        <test-method status="PASS" signature="updateUserDetails()[pri:3, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="updateUserDetails" duration-ms="1608" started-at="2022-04-20T02:15:00 IST" finished-at="2022-04-20T02:15:01 IST">
+        </test-method> <!-- getUserByUserId -->
+        <test-method status="PASS" signature="updateUserByUserId()[pri:3, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="updateUserByUserId" duration-ms="1495" started-at="2022-04-23T00:35:20 IST" finished-at="2022-04-23T00:35:21 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateUserDetails -->
-        <test-method status="PASS" signature="deleteUser()[pri:4, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="deleteUser" duration-ms="899" started-at="2022-04-20T02:15:01 IST" finished-at="2022-04-20T02:15:02 IST">
+        </test-method> <!-- updateUserByUserId -->
+        <test-method status="PASS" signature="deleteUserByUserId()[pri:4, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="deleteUserByUserId" duration-ms="916" started-at="2022-04-23T00:35:21 IST" finished-at="2022-04-23T00:35:22 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteUser -->
-        <test-method status="PASS" signature="invalidPostRequest()[pri:5, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="invalidPostRequest" duration-ms="806" started-at="2022-04-20T02:15:02 IST" finished-at="2022-04-20T02:15:03 IST">
+        </test-method> <!-- deleteUserByUserId -->
+        <test-method status="PASS" signature="invalidRequestThroughUsers()[pri:5, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="invalidRequestThroughUsers" duration-ms="877" started-at="2022-04-23T00:35:22 IST" finished-at="2022-04-23T00:35:23 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- invalidPostRequest -->
-        <test-method status="PASS" signature="CreateNewUserUsingPosts()[pri:6, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="CreateNewUserUsingPosts" duration-ms="802" started-at="2022-04-20T02:15:03 IST" finished-at="2022-04-20T02:15:04 IST">
+        </test-method> <!-- invalidRequestThroughUsers -->
+        <test-method status="PASS" signature="postsNewUser()[pri:6, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="postsNewUser" duration-ms="788" started-at="2022-04-23T00:35:23 IST" finished-at="2022-04-23T00:35:24 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateNewUserUsingPosts -->
-        <test-method status="PASS" signature="getUserUsingPosts()[pri:7, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="getUserUsingPosts" duration-ms="1214" started-at="2022-04-20T02:15:04 IST" finished-at="2022-04-20T02:15:05 IST">
+        </test-method> <!-- postsNewUser -->
+        <test-method status="PASS" signature="getPostsById()[pri:7, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="getPostsById" duration-ms="1297" started-at="2022-04-23T00:35:24 IST" finished-at="2022-04-23T00:35:25 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getUserUsingPosts -->
-        <test-method status="PASS" signature="updateUserUsingPosts()[pri:8, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="updateUserUsingPosts" duration-ms="1247" started-at="2022-04-20T02:15:05 IST" finished-at="2022-04-20T02:15:06 IST">
+        </test-method> <!-- getPostsById -->
+        <test-method status="PASS" signature="updatePostsById()[pri:8, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="updatePostsById" duration-ms="1245" started-at="2022-04-23T00:35:25 IST" finished-at="2022-04-23T00:35:26 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateUserUsingPosts -->
-        <test-method status="PASS" signature="deleteUserPosts()[pri:9, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="deleteUserPosts" duration-ms="796" started-at="2022-04-20T02:15:06 IST" finished-at="2022-04-20T02:15:07 IST">
+        </test-method> <!-- updatePostsById -->
+        <test-method status="PASS" signature="deletePostsById()[pri:9, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="deletePostsById" duration-ms="917" started-at="2022-04-23T00:35:26 IST" finished-at="2022-04-23T00:35:27 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteUserPosts -->
-        <test-method status="PASS" signature="CreateNewUserUsingComments()[pri:10, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="CreateNewUserUsingComments" duration-ms="792" started-at="2022-04-20T02:15:07 IST" finished-at="2022-04-20T02:15:08 IST">
+        </test-method> <!-- deletePostsById -->
+        <test-method status="PASS" signature="commentsOnNewUser()[pri:10, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="commentsOnNewUser" duration-ms="789" started-at="2022-04-23T00:35:27 IST" finished-at="2022-04-23T00:35:28 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateNewUserUsingComments -->
-        <test-method status="PASS" signature="getUserUsingComments()[pri:11, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="getUserUsingComments" duration-ms="1221" started-at="2022-04-20T02:15:08 IST" finished-at="2022-04-20T02:15:09 IST">
+        </test-method> <!-- commentsOnNewUser -->
+        <test-method status="PASS" signature="getCommentsByUserId()[pri:11, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="getCommentsByUserId" duration-ms="1186" started-at="2022-04-23T00:35:28 IST" finished-at="2022-04-23T00:35:29 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getUserUsingComments -->
-        <test-method status="PASS" signature="updateCommentsUser()[pri:12, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="updateCommentsUser" duration-ms="1194" started-at="2022-04-20T02:15:09 IST" finished-at="2022-04-20T02:15:10 IST">
+        </test-method> <!-- getCommentsByUserId -->
+        <test-method status="PASS" signature="updateCommentsByUserId()[pri:12, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="updateCommentsByUserId" duration-ms="1147" started-at="2022-04-23T00:35:29 IST" finished-at="2022-04-23T00:35:30 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateCommentsUser -->
-        <test-method status="PASS" signature="deleteCommentsUser()[pri:13, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="deleteCommentsUser" duration-ms="829" started-at="2022-04-20T02:15:10 IST" finished-at="2022-04-20T02:15:11 IST">
+        </test-method> <!-- updateCommentsByUserId -->
+        <test-method status="PASS" signature="deleteCommentsByUserId()[pri:13, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="deleteCommentsByUserId" duration-ms="782" started-at="2022-04-23T00:35:30 IST" finished-at="2022-04-23T00:35:31 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteCommentsUser -->
-        <test-method status="PASS" signature="todosNewUserCreate()[pri:14, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="todosNewUserCreate" duration-ms="785" started-at="2022-04-20T02:15:11 IST" finished-at="2022-04-20T02:15:12 IST">
+        </test-method> <!-- deleteCommentsByUserId -->
+        <test-method status="PASS" signature="todosNewUser()[pri:14, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="todosNewUser" duration-ms="750" started-at="2022-04-23T00:35:31 IST" finished-at="2022-04-23T00:35:32 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- todosNewUserCreate -->
-        <test-method status="PASS" signature="todosGetUserById()[pri:15, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="todosGetUserById" duration-ms="1105" started-at="2022-04-20T02:15:12 IST" finished-at="2022-04-20T02:15:13 IST">
+        </test-method> <!-- todosNewUser -->
+        <test-method status="PASS" signature="getTodosUserById()[pri:15, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="getTodosUserById" duration-ms="1218" started-at="2022-04-23T00:35:32 IST" finished-at="2022-04-23T00:35:33 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- todosGetUserById -->
-        <test-method status="PASS" signature="updateTodosUser()[pri:16, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="updateTodosUser" duration-ms="1215" started-at="2022-04-20T02:15:13 IST" finished-at="2022-04-20T02:15:14 IST">
+        </test-method> <!-- getTodosUserById -->
+        <test-method status="PASS" signature="updateTodosUserById()[pri:16, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="updateTodosUserById" duration-ms="1211" started-at="2022-04-23T00:35:33 IST" finished-at="2022-04-23T00:35:34 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateTodosUser -->
-        <test-method status="PASS" signature="todosDeleteUserById()[pri:17, instance:com.liseinfotech.gorestApiTest.GorestApiTest@2038ae61]" name="todosDeleteUserById" duration-ms="758" started-at="2022-04-20T02:15:14 IST" finished-at="2022-04-20T02:15:15 IST">
+        </test-method> <!-- updateTodosUserById -->
+        <test-method status="PASS" signature="deleteTodosUserById()[pri:17, instance:com.liseinfotech.gorestApiTest.GorestApiTest@60c6f5b]" name="deleteTodosUserById" duration-ms="738" started-at="2022-04-23T00:35:34 IST" finished-at="2022-04-23T00:35:35 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- todosDeleteUserById -->
+        </test-method> <!-- deleteTodosUserById -->
       </class> <!-- com.liseinfotech.gorestApiTest.GorestApiTest -->
     </test> <!-- GorestInterRelatedApiTest -->
   </suite> <!-- Default Suite -->

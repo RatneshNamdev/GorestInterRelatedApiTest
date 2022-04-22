@@ -1,6 +1,11 @@
 package com.liseinfotech.gorestApiTest;
 
 import com.github.javafaker.Faker;
+import com.liseinfotech.gorestApiTest.steps.BaseTest;
+import com.liseinfotech.gorestModels.CommentsPostData;
+import com.liseinfotech.gorestModels.TodosPostData;
+import com.liseinfotech.gorestModels.UserData;
+import com.liseinfotech.gorestModels.UsersDataPosts;
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
@@ -14,10 +19,10 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
-public class GorestApiTest extends BaseTest{
+public class GorestApiTest extends BaseTest {
 
     @Test(priority = 1)
-    public void postCreateNewUser() throws JSONException{
+    public void createUserThroughPost() throws JSONException{
         Faker faker = new Faker();
 
         String userEmail = faker.internet().emailAddress();
@@ -30,7 +35,6 @@ public class GorestApiTest extends BaseTest{
         try {
             Response response = postUser(body);
             UserData userData = response.as(UserData.class);
-
             userId = userData.getId();
             assertThat(response.statusCode(), is(HttpStatus.SC_CREATED));
 
@@ -45,7 +49,7 @@ public class GorestApiTest extends BaseTest{
     }
 
     @Test(priority = 2)
-    public void getUserDetails() throws JSONException {
+    public void getUserByUserId() throws JSONException {
         Faker faker = new Faker();
 
         String userEmail = faker.internet().emailAddress();
@@ -81,7 +85,7 @@ public class GorestApiTest extends BaseTest{
     }
 
     @Test(priority = 3)
-    public void updateUserDetails() throws JSONException{
+    public void updateUserByUserId() throws JSONException{
         Faker faker = new Faker();
 
         String userEmail = faker.internet().emailAddress();
@@ -123,7 +127,7 @@ public class GorestApiTest extends BaseTest{
     }
 
     @Test(priority = 4)
-    public void deleteUser() throws JSONException{
+    public void deleteUserByUserId() throws JSONException{
         Faker faker = new Faker();
 
         String userEmail = faker.internet().emailAddress();
@@ -151,7 +155,7 @@ public class GorestApiTest extends BaseTest{
     }
 
     @Test(priority = 5)
-    public void invalidPostRequest() throws JSONException{
+    public void invalidRequestThroughUsers() throws JSONException{
 
         Faker faker = new Faker();
         String userEmail = faker.internet().emailAddress();
@@ -173,19 +177,26 @@ public class GorestApiTest extends BaseTest{
     }
 
     @Test(priority = 6)
-    public void CreateNewUserUsingPosts() throws JSONException{
+    public void postsNewUser() throws JSONException{
+        int id = 0;
+        int userId = 0;
         Faker faker = new Faker();
-
+        String userEmail = faker.internet().emailAddress();
+        String userName = faker.name().fullName();
+        String userGender = "male";
+        String userStatus = "active";
         String userTitle = faker.name().title();
         String userBody = faker.lorem().fixedString(50);
-        int userId = 2293;
 
-        String body = "{" + "\"user_id\": \""+userId+"\"," + "\"title\": \""+userTitle+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
-        int id = 0;
         try {
-            Response response = postsUsers(body);
+            String postBody = "{" + "\"name\": \""+userName+"\"," + "\"email\": \""+userEmail+"\"," + "\"gender\": \""+userGender+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
+            Response postResponse = postUser(postBody);
+            UserData userDataPost = postResponse.as(UserData.class);
+            userId = userDataPost.getId();
 
-            System.out.println(response.asString());
+            String body = "{" + "\"user_id\": \""+userId+"\"," + "\"title\": \""+userTitle+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
+            Response response = postsUsers(body);
+            System.out.println("res : " + response.asString());
             UsersDataPosts userData = response.as(UsersDataPosts.class);
             id = userData.getId();
 
@@ -196,25 +207,33 @@ public class GorestApiTest extends BaseTest{
             assertThat(userData.getBody(), is(userBody));
         }finally {
             deleteUserByIdPosts(id);
+            deleteUser(userId);
         }
     }
 
     @Test(priority = 7)
-    public void getUserUsingPosts() throws JSONException{
-        Faker faker = new Faker();
+    public void getPostsById() throws JSONException{
+        int userId = 0;
+        int id =0;
 
+        Faker faker = new Faker();
+        String userEmail = faker.internet().emailAddress();
+        String userName = faker.name().fullName();
+        String userGender = "male";
+        String userStatus = "active";
         String userTitle = faker.name().title();
         String userBody = faker.lorem().fixedString(50);
-        int userId = 2293;
-
-        String body = "{" + "\"user_id\": \""+userId+"\"," + "\"title\": \""+userTitle+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
-        int id =0;
         try {
+            String postBody = "{" + "\"name\": \""+userName+"\"," + "\"email\": \""+userEmail+"\"," + "\"gender\": \""+userGender+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
+            Response postResponse = postUser(postBody);
+            UserData userDataPost = postResponse.as(UserData.class);
+            userId = userDataPost.getId();
+
+            String body = "{" + "\"user_id\": \""+userId+"\"," + "\"title\": \""+userTitle+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
             Response response = postsUsers(body);
             UsersDataPosts userData = response.as(UsersDataPosts.class);
             id = userData.getId();
             Response getResponse = getUserPosts(id);
-            System.out.println(getResponse.asString());
 
             assertThat(response.statusCode(), is(HttpStatus.SC_CREATED));
             assertThat(userData.getId(), is(notNullValue()));
@@ -223,27 +242,37 @@ public class GorestApiTest extends BaseTest{
             assertThat(userData.getBody(), is(userBody));
         }finally {
             deleteUserByIdPosts(id);
+            deleteUser(userId);
         }
-
     }
 
     @Test(priority = 8)
-    public void updateUserUsingPosts() throws JSONException{
+    public void updatePostsById() throws JSONException{
+        int id = 0;
+        int userId = 0;
+
         Faker faker = new Faker();
+        String userEmail = faker.internet().emailAddress();
+        String userName = faker.name().fullName();
+        String userGender = "male";
+        String userStatus = "active";
 
         String userTitle = faker.name().title();
         String userBody = faker.lorem().fixedString(50);
         String updatedUserBody = faker.lorem().fixedString(60);
-        int userId = 2293;
-
-        String body = "{" + "\"user_id\": \""+userId+"\"," + "\"title\": \""+userTitle+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
-
-        String updatedBody = "{" + "\"title\": \""+userTitle+"\"," + "\"body\": \""+updatedUserBody+"\"\n" + "}";
-        int id = 0;
         try {
+            String postBody = "{" + "\"name\": \""+userName+"\"," + "\"email\": \""+userEmail+"\"," + "\"gender\": \""+userGender+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
+            Response postResponse = postUser(postBody);
+            UserData userDataPost = postResponse.as(UserData.class);
+            userId = userDataPost.getId();
+
+            String body = "{" + "\"user_id\": \""+userId+"\"," + "\"title\": \""+userTitle+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
+            String updatedBody = "{" + "\"title\": \""+userTitle+"\"," + "\"body\": \""+updatedUserBody+"\"\n" + "}";
+
             Response response = postsUsers(body);
             UsersDataPosts userData = response.as(UsersDataPosts.class);
             id = userData.getId();
+
             Response responseUpdate = updateUserPosts(updatedBody, id);
             UsersDataPosts postsUserData = responseUpdate.as(UsersDataPosts.class);
 
@@ -259,250 +288,482 @@ public class GorestApiTest extends BaseTest{
             assertThat(postsUserData.getBody(), is(updatedUserBody));
         }finally {
             deleteUserByIdPosts(id);
+            deleteUser(userId);
         }
     }
 
     @Test(priority = 9)
-    public void deleteUserPosts(){
+    public void deletePostsById(){
+        int userId = 0;
+        int id = 0;
+
         Faker faker = new Faker();
+        String userEmail = faker.internet().emailAddress();
+        String userName = faker.name().fullName();
+        String userGender = "male";
+        String userStatus = "active";
 
         String userTitle = faker.name().title();
         String userBody = faker.lorem().fixedString(50);
-        int userId = 2293;
-
-        String body = "{" + "\"user_id\": \""+userId+"\"," + "\"title\": \""+userTitle+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
-        int id = 0;
         try {
+            String postBody = "{" + "\"name\": \""+userName+"\"," + "\"email\": \""+userEmail+"\"," + "\"gender\": \""+userGender+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
+            Response postResponse = postUser(postBody);
+            UserData userDataPost = postResponse.as(UserData.class);
+            userId = userDataPost.getId();
+
+            String body = "{" + "\"user_id\": \""+userId+"\"," + "\"title\": \""+userTitle+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
             Response response = postsUsers(body);
             UsersDataPosts userData = response.as(UsersDataPosts.class);
             id = userData.getId();
         }finally {
             deleteUserByIdPosts(id);
+            deleteUser(userId);
         }
     }
 
     @Test(priority = 10)
-    public void CreateNewUserUsingComments() throws JSONException{
+    public void commentsOnNewUser() throws JSONException{
+        int postUserId = 0;
+        int usersId = 0;
+        int commentsId = 0;
+
         Faker faker = new Faker();
+        String usersEmail = faker.internet().emailAddress();
+        String usersName = faker.name().fullName();
+        String userGender = "male";
+        String userStatus = "active";
+        String postUserTitle = faker.name().title();
+        String postUserBody = faker.lorem().fixedString(50);
 
         String userName = faker.name().fullName();
         String userBody = faker.lorem().fixedString(50);
         String userEmail = faker.internet().emailAddress();
-        int userPostId = 1098;
-
-        String body = "{" + "\"post_id\": \""+userPostId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
-
-        int userId = 0;
         try {
+            String usersBody = "{" + "\"name\": \""+usersName+"\"," + "\"email\": \""+usersEmail+"\"," + "\"gender\": \""+userGender+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
+            Response usersResponse = postUser(usersBody);
+            System.out.println("users-res : " + usersResponse.asString());
+            UserData userDataPost = usersResponse.as(UserData.class);
+            usersId = userDataPost.getId();
+
+            String postBody = "{" + "\"user_id\": \""+usersId+"\"," + "\"title\": \""+postUserTitle+"\"," + "\"body\": \""+postUserBody+"\"\n" + "}";
+            Response postsResponse = postsUsers(postBody);
+            System.out.println("post-res : " + postsResponse.asString());
+            UsersDataPosts postUserData = postsResponse.as(UsersDataPosts.class);
+            postUserId = postUserData.getId();
+
+            String body = "{" + "\"post_id\": \""+postUserId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
             Response response = postCommentsUsers(body);
+            System.out.println("comm-res : " + response.asString());
             CommentsPostData userData = response.as(CommentsPostData.class);
-            userId = userData.getId();
+            commentsId = userData.getId();
 
             assertThat(response.statusCode(), is(HttpStatus.SC_CREATED));
-            assertThat(userData.getPost_id(), is(userPostId));
+            assertThat(userData.getPost_id(), is(postUserId));
             assertThat(userData.getName(), is(userName));
             assertThat(userData.getBody(), is(userBody));
             assertThat(userData.getEmail(), is(userEmail));
-            assertThat(userData.getId(), notNullValue());
+            assertThat(userData.getId(), is(commentsId));
         }finally {
-            deleteCommentsUser(userId);
+            deleteCommentsUser(commentsId);
+            deleteUserByIdPosts(postUserId);
+            deleteUser(usersId);
         }
     }
 
     @Test(priority = 11)
-    public void getUserUsingComments(){
+    public void getCommentsByUserId(){
+        int postUserId = 0;
+        int usersId = 0;
+        int commentsId = 0;
+
         Faker faker = new Faker();
+        String usersEmail = faker.internet().emailAddress();
+        String usersName = faker.name().fullName();
+        String userGender = "male";
+        String userStatus = "active";
+        String postUserTitle = faker.name().title();
+        String postUserBody = faker.lorem().fixedString(50);
 
         String userName = faker.name().fullName();
         String userBody = faker.lorem().fixedString(50);
         String userEmail = faker.internet().emailAddress();
-        int userPostId = 1098;
-
-        String body = "{" + "\"post_id\": \""+userPostId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
-
-        int userId = 0;
         try {
+            String usersBody = "{" + "\"name\": \""+usersName+"\"," + "\"email\": \""+usersEmail+"\"," + "\"gender\": \""+userGender+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
+            Response usersResponse = postUser(usersBody);
+            System.out.println("users-res : " + usersResponse.asString());
+            UserData userDataPost = usersResponse.as(UserData.class);
+            usersId = userDataPost.getId();
+
+            String postBody = "{" + "\"user_id\": \""+usersId+"\"," + "\"title\": \""+postUserTitle+"\"," + "\"body\": \""+postUserBody+"\"\n" + "}";
+            Response postsResponse = postsUsers(postBody);
+            System.out.println("post-res : " + postsResponse.asString());
+            UsersDataPosts postUserData = postsResponse.as(UsersDataPosts.class);
+            postUserId = postUserData.getId();
+
+            String body = "{" + "\"post_id\": \""+postUserId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
             Response response = postCommentsUsers(body);
             CommentsPostData userData = response.as(CommentsPostData.class);
-            userId = userData.getId();
-            Response getResponse = getUserComments(userId);
+            commentsId = userData.getId();
+
+            Response getResponse = getUserComments(commentsId);
             CommentsPostData getUserData = getResponse.as(CommentsPostData.class);
             System.out.println("getRes : " + getResponse.asString());
 
             assertThat(response.statusCode(), is(HttpStatus.SC_CREATED));
 
-            assertThat(getUserData.getId(), is(userId));
-            assertThat(getUserData.getPost_id(), is(userPostId));
+            assertThat(getUserData.getId(), is(commentsId));
+            assertThat(getUserData.getPost_id(), is(postUserId));
             assertThat(getUserData.getName(), is(userName));
             assertThat(getUserData.getEmail(), is(userEmail));
             assertThat(getUserData.getBody(), is(userBody));
         }finally {
-            deleteCommentsUser(userId);
+            deleteCommentsUser(commentsId);
+            deleteUserByIdPosts(postUserId);
+            deleteUser(usersId);
         }
     }
 
     @Test(priority = 12)
-    public void updateCommentsUser(){
+    public void updateCommentsByUserId(){
+        int postUserId = 0;
+        int usersId = 0;
+        int commentsId = 0;
+
         Faker faker = new Faker();
+        String usersEmail = faker.internet().emailAddress();
+        String usersName = faker.name().fullName();
+        String userGender = "male";
+        String userStatus = "active";
+        String postUserTitle = faker.name().title();
+        String postUserBody = faker.lorem().fixedString(50);
 
         String userName = faker.name().fullName();
         String userBody = faker.lorem().fixedString(50);
         String userEmail = faker.internet().emailAddress();
-        int userPostId = 1098;
 
-        String body = "{" + "\"post_id\": \""+userPostId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
         String updateName = faker.name().fullName();
         String updateEmail = faker.internet().emailAddress();
-        String updateBody = "{" + "\"email\":\""+updateEmail+"\"," + "\"name\": \""+updateName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
-
-        int userId = 0;
         try {
+            String usersBody = "{" + "\"name\": \""+usersName+"\"," + "\"email\": \""+usersEmail+"\"," + "\"gender\": \""+userGender+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
+            Response usersResponse = postUser(usersBody);
+            System.out.println("users-res : " + usersResponse.asString());
+            UserData userDataPost = usersResponse.as(UserData.class);
+            usersId = userDataPost.getId();
+
+            String postBody = "{" + "\"user_id\": \""+usersId+"\"," + "\"title\": \""+postUserTitle+"\"," + "\"body\": \""+postUserBody+"\"\n" + "}";
+            Response postsResponse = postsUsers(postBody);
+            System.out.println("post-res : " + postsResponse.asString());
+            UsersDataPosts postUserData = postsResponse.as(UsersDataPosts.class);
+            postUserId = postUserData.getId();
+
+            String body = "{" + "\"post_id\": \""+postUserId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
+            String updateBody = "{" + "\"email\":\""+updateEmail+"\"," + "\"name\": \""+updateName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
+
             Response response = postCommentsUsers(body);
             CommentsPostData userData = response.as(CommentsPostData.class);
-            userId = userData.getId();
+            commentsId = userData.getId();
 
-            Response updateResponse = updateCommentsUser(updateBody, userId);
+            Response updateResponse = updateCommentsUser(updateBody, commentsId);
             CommentsPostData updatedUserData = updateResponse.as(CommentsPostData.class);
             System.out.println("upRes : " + updateResponse.asString());
 
             assertThat(response.statusCode(), is(HttpStatus.SC_CREATED));
-            assertThat(updatedUserData.getId(), is(userId));
-            assertThat(updatedUserData.getPost_id(), is(userPostId));
+            assertThat(updatedUserData.getId(), is(commentsId));
+            assertThat(updatedUserData.getPost_id(), is(postUserId));
             assertThat(updatedUserData.getEmail(), is(updateEmail));
             assertThat(updatedUserData.getName(), is(updateName));
             assertThat(updatedUserData.getBody(), is(userBody));
         }finally {
-            deleteCommentsUser(userId);
+            deleteCommentsUser(commentsId);
+            deleteUserByIdPosts(postUserId);
+            deleteUser(usersId);
         }
     }
 
     @Test(priority = 13)
-    public void deleteCommentsUser(){
+    public void deleteCommentsByUserId(){
+        int postUserId = 0;
+        int usersId = 0;
+        int commentsId = 0;
+
         Faker faker = new Faker();
+        String usersEmail = faker.internet().emailAddress();
+        String usersName = faker.name().fullName();
+        String userGender = "male";
+        String userStatus = "active";
+        String postUserTitle = faker.name().title();
+        String postUserBody = faker.lorem().fixedString(50);
 
         String userName = faker.name().fullName();
         String userBody = faker.lorem().fixedString(50);
         String userEmail = faker.internet().emailAddress();
-        int userPostId = 1098;
-
-        String body = "{" + "\"post_id\": \""+userPostId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
-        int userId = 0;
         try {
+            String usersBody = "{" + "\"name\": \""+usersName+"\"," + "\"email\": \""+usersEmail+"\"," + "\"gender\": \""+userGender+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
+            Response usersResponse = postUser(usersBody);
+            System.out.println("users-res : " + usersResponse.asString());
+            UserData userDataPost = usersResponse.as(UserData.class);
+            usersId = userDataPost.getId();
+
+            String postBody = "{" + "\"user_id\": \""+usersId+"\"," + "\"title\": \""+postUserTitle+"\"," + "\"body\": \""+postUserBody+"\"\n" + "}";
+            Response postsResponse = postsUsers(postBody);
+            System.out.println("post-res : " + postsResponse.asString());
+            UsersDataPosts postUserData = postsResponse.as(UsersDataPosts.class);
+            postUserId = postUserData.getId();
+
+            String body = "{" + "\"post_id\": \""+postUserId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
             Response response = postCommentsUsers(body);
             CommentsPostData userData = response.as(CommentsPostData.class);
-            userId = userData.getId();
+            commentsId = userData.getId();
         }finally {
-            deleteCommentsUser(userId);
+            deleteCommentsUser(commentsId);
+            deleteUserByIdPosts(postUserId);
+            deleteUser(usersId);
         }
     }
 
     @Test(priority = 14)
-    public void todosNewUserCreate(){
+    public void todosNewUser(){
+        int postUserId = 0;
+        int usersId = 0;
+        int commentsId = 0;
+        int todosUserId = 0;
+
         Faker faker = new Faker();
+        String usersEmail = faker.internet().emailAddress();
+        String usersName = faker.name().fullName();
+        String usersGender = "male";
+        String usersStatus = "active";
+
+        String postUserTitle = faker.name().title();
+        String postUserBody = faker.lorem().fixedString(50);
+
+        String userName = faker.name().fullName();
+        String userBody = faker.lorem().fixedString(50);
+        String userEmail = faker.internet().emailAddress();
 
         String userTitle = faker.name().title();
         String userDueOn = "2022-05-03T00:00:00.000+05:30";
         String userStatus = "pending";
-        int userId = 3427;
-
-        String body = "{" + "\"user_id\": \""+userId+"\"," + "\"title\":\""+userTitle+"\"," + "\"due_on\": \""+userDueOn+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
-
-        int id = 0;
         try {
+            String usersBody = "{" + "\"name\": \""+usersName+"\"," + "\"email\": \""+usersEmail+"\"," + "\"gender\": \""+usersGender+"\"," + "\"status\": \""+usersStatus+"\"\n" + "}";
+            Response usersResponse = postUser(usersBody);
+            System.out.println("users-res : " + usersResponse.asString());
+            UserData userDataPost = usersResponse.as(UserData.class);
+            usersId = userDataPost.getId();
+
+            String postBody = "{" + "\"user_id\": \""+usersId+"\"," + "\"title\": \""+postUserTitle+"\"," + "\"body\": \""+postUserBody+"\"\n" + "}";
+            Response postsResponse = postsUsers(postBody);
+            System.out.println("post-res : " + postsResponse.asString());
+            UsersDataPosts postUserData = postsResponse.as(UsersDataPosts.class);
+            postUserId = postUserData.getId();
+
+            String commentsBody = "{" + "\"post_id\": \""+postUserId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
+            Response commentsResponse = postCommentsUsers(commentsBody);
+            System.out.println("comm-res : " + commentsResponse.asString());
+            CommentsPostData userDataComm = commentsResponse.as(CommentsPostData.class);
+            commentsId = userDataComm.getId();
+
+            String body = "{" + "\"user_id\": \""+commentsId+"\"," + "\"title\":\""+userTitle+"\"," + "\"due_on\": \""+userDueOn+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
             Response response = todosPostUser(body);
             TodosPostData userData = response.as(TodosPostData.class);
-            id = userData.getId();
+            System.out.println("todos-res : " + response.asString());
+            todosUserId = userData.getId();
 
             assertThat(response.statusCode(), is(HttpStatus.SC_CREATED));
-            assertThat(userData.getId(), is(notNullValue()));
-            assertThat(userData.getUser_id(), is(userId));
+            assertThat(userData.getId(), is(todosUserId));
+            assertThat(userData.getUser_id(), is(commentsId));
             assertThat(userData.getTitle(), is(userTitle));
             assertThat(userData.getDue_on(), is(userDueOn));
             assertThat(userData.getStatus(), is(userStatus));
         }finally {
-            deleteTodosUser(id);
+            deleteTodosUser(todosUserId);
+            deleteCommentsUser(commentsId);
+            deleteUserByIdPosts(postUserId);
+            deleteUser(usersId);
         }
     }
 
     @Test(priority = 15)
-    public void todosGetUserById(){
+    public void getTodosUserById(){
+        int postUserId = 0;
+        int usersId = 0;
+        int commentsId = 0;
+        int todosUserId = 0;
+
         Faker faker = new Faker();
+        String usersEmail = faker.internet().emailAddress();
+        String usersName = faker.name().fullName();
+        String usersGender = "male";
+        String usersStatus = "active";
+
+        String postUserTitle = faker.name().title();
+        String postUserBody = faker.lorem().fixedString(50);
+
+        String userName = faker.name().fullName();
+        String userBody = faker.lorem().fixedString(50);
+        String userEmail = faker.internet().emailAddress();
 
         String userTitle = faker.name().title();
         String userDueOn = "2022-05-03T00:00:00.000+05:30";
         String userStatus = "pending";
-        int userId = 3427;
-
-        String body = "{" + "\"user_id\": \""+userId+"\"," + "\"title\":\""+userTitle+"\"," + "\"due_on\": \""+userDueOn+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
-        int id = 0;
         try {
+            String usersBody = "{" + "\"name\": \""+usersName+"\"," + "\"email\": \""+usersEmail+"\"," + "\"gender\": \""+usersGender+"\"," + "\"status\": \""+usersStatus+"\"\n" + "}";
+            Response usersResponse = postUser(usersBody);
+            System.out.println("users-res : " + usersResponse.asString());
+            UserData userDataPost = usersResponse.as(UserData.class);
+            usersId = userDataPost.getId();
+
+            String postBody = "{" + "\"user_id\": \""+usersId+"\"," + "\"title\": \""+postUserTitle+"\"," + "\"body\": \""+postUserBody+"\"\n" + "}";
+            Response postsResponse = postsUsers(postBody);
+            System.out.println("post-res : " + postsResponse.asString());
+            UsersDataPosts postUserData = postsResponse.as(UsersDataPosts.class);
+            postUserId = postUserData.getId();
+
+            String commentsBody = "{" + "\"post_id\": \""+postUserId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
+            Response commentsResponse = postCommentsUsers(commentsBody);
+            System.out.println("comm-res : " + commentsResponse.asString());
+            CommentsPostData userDataComm = commentsResponse.as(CommentsPostData.class);
+            commentsId = userDataComm.getId();
+
+
+            String body = "{" + "\"user_id\": \""+commentsId+"\"," + "\"title\":\""+userTitle+"\"," + "\"due_on\": \""+userDueOn+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
             Response response = todosPostUser(body);
             TodosPostData userData = response.as(TodosPostData.class);
-            id = userData.getId();
-
-            Response getResponse = todosGetUser(id);
+            todosUserId = userData.getId();
+            Response getResponse = todosGetUser(todosUserId);
             System.out.println("getRes : " + getResponse.asString());
             TodosPostData getUserData = getResponse.as(TodosPostData.class);
-            assertThat(getUserData.getId(),is(notNullValue()));
-            assertThat(getUserData.getUser_id(), is(userId));
+
+            assertThat(getUserData.getId(),is(todosUserId));
+            assertThat(getUserData.getUser_id(), is(commentsId));
             assertThat(getUserData.getTitle(), is(userTitle));
             assertThat(getUserData.getDue_on(), is(userDueOn));
             assertThat(getUserData.getStatus(), is(userStatus));
         }finally {
-            deleteTodosUser(id);
+            deleteTodosUser(todosUserId);
+            deleteCommentsUser(commentsId);
+            deleteUserByIdPosts(postUserId);
+            deleteUser(usersId);
         }
     }
 
     @Test(priority = 16)
-    public void updateTodosUser(){
+    public void updateTodosUserById(){
+        int postUserId = 0;
+        int usersId = 0;
+        int commentsId = 0;
+        int todosUserId = 0;
+
         Faker faker = new Faker();
+        String usersEmail = faker.internet().emailAddress();
+        String usersName = faker.name().fullName();
+        String usersGender = "male";
+        String usersStatus = "active";
+
+        String postUserTitle = faker.name().title();
+        String postUserBody = faker.lorem().fixedString(50);
+
+        String userName = faker.name().fullName();
+        String userBody = faker.lorem().fixedString(50);
+        String userEmail = faker.internet().emailAddress();
 
         String userTitle = faker.name().title();
         String userDueOn = "2022-05-03T00:00:00.000+05:30";
         String userStatus = "pending";
-
-        int userId = 3427;
-        String body = "{" + "\"user_id\": \""+userId+"\"," + "\"title\":\""+userTitle+"\"," + "\"due_on\": \""+userDueOn+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
-
-        String updateTitle = faker.name().title();
-        String updatedBody = "{" + "\"title\":\""+updateTitle+"\"," + "\"due_on\": \""+userDueOn+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
-        int id = 0;
         try {
+            String usersBody = "{" + "\"name\": \""+usersName+"\"," + "\"email\": \""+usersEmail+"\"," + "\"gender\": \""+usersGender+"\"," + "\"status\": \""+usersStatus+"\"\n" + "}";
+            Response usersResponse = postUser(usersBody);
+            System.out.println("users-res : " + usersResponse.asString());
+            UserData userDataPost = usersResponse.as(UserData.class);
+            usersId = userDataPost.getId();
+
+            String postBody = "{" + "\"user_id\": \""+usersId+"\"," + "\"title\": \""+postUserTitle+"\"," + "\"body\": \""+postUserBody+"\"\n" + "}";
+            Response postsResponse = postsUsers(postBody);
+            System.out.println("post-res : " + postsResponse.asString());
+            UsersDataPosts postUserData = postsResponse.as(UsersDataPosts.class);
+            postUserId = postUserData.getId();
+
+            String commentsBody = "{" + "\"post_id\": \""+postUserId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
+            Response commentsResponse = postCommentsUsers(commentsBody);
+            System.out.println("comm-res : " + commentsResponse.asString());
+            CommentsPostData userDataComm = commentsResponse.as(CommentsPostData.class);
+            commentsId = userDataComm.getId();
+
+            String body = "{" + "\"user_id\": \""+commentsId+"\"," + "\"title\":\""+userTitle+"\"," + "\"due_on\": \""+userDueOn+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
+
+            String updateTitle = faker.name().title();
+            String updatedBody = "{" + "\"title\":\""+updateTitle+"\"," + "\"due_on\": \""+userDueOn+"\"," + "\"status\": \""+userStatus+"\"\n" + "}";
             Response response = todosPostUser(body);
             TodosPostData userData = response.as(TodosPostData.class);
-
-            id = userData.getId();
-            Response updatedResponse = updateTodosUserDetail(updatedBody, id);
+            todosUserId = userData.getId();
+            Response updatedResponse = updateTodosUserDetail(updatedBody, todosUserId);
             TodosPostData updatedUserData = updatedResponse.as(TodosPostData.class);
 
             assertThat(response.statusCode(), is(HttpStatus.SC_CREATED));
-            assertThat(updatedUserData.getId(), is(id));
-            assertThat(updatedUserData.getUser_id(), is(userId));
+            assertThat(updatedUserData.getId(), is(todosUserId));
+            assertThat(updatedUserData.getUser_id(), is(commentsId));
             assertThat(updatedUserData.getDue_on(), is(userDueOn));
             assertThat(updatedUserData.getTitle(), is(updateTitle));
             assertThat(updatedUserData.getStatus(), is(userStatus));
         }finally {
-            deleteTodosUser(id);
+            deleteTodosUser(todosUserId);
+            deleteCommentsUser(commentsId);
+            deleteUserByIdPosts(postUserId);
+            deleteUser(usersId);
         }
     }
 
     @Test(priority = 17)
-    public void todosDeleteUserById() {
+    public void deleteTodosUserById() {
+        int postUserId = 0;
+        int usersId = 0;
+        int commentsId = 0;
+        int todosUserId = 0;
+
         Faker faker = new Faker();
+        String usersEmail = faker.internet().emailAddress();
+        String usersName = faker.name().fullName();
+        String usersGender = "male";
+        String usersStatus = "active";
+
+        String postUserTitle = faker.name().title();
+        String postUserBody = faker.lorem().fixedString(50);
+
+        String userName = faker.name().fullName();
+        String userBody = faker.lorem().fixedString(50);
+        String userEmail = faker.internet().emailAddress();
 
         String userTitle = faker.name().title();
         String userDueOn = "2022-05-03T00:00:00.000+05:30";
         String userStatus = "pending";
-        int userId = 3427;
-
-        String body = "{" + "\"user_id\": \"" + userId + "\"," + "\"title\":\"" + userTitle + "\"," + "\"due_on\": \"" + userDueOn + "\"," + "\"status\": \"" + userStatus + "\"\n" + "}";
-        int id = 0;
         try {
+            String usersBody = "{" + "\"name\": \""+usersName+"\"," + "\"email\": \""+usersEmail+"\"," + "\"gender\": \""+usersGender+"\"," + "\"status\": \""+usersStatus+"\"\n" + "}";
+            Response usersResponse = postUser(usersBody);
+            System.out.println("users-res : " + usersResponse.asString());
+            UserData userDataPost = usersResponse.as(UserData.class);
+            usersId = userDataPost.getId();
+
+            String postBody = "{" + "\"user_id\": \""+usersId+"\"," + "\"title\": \""+postUserTitle+"\"," + "\"body\": \""+postUserBody+"\"\n" + "}";
+            Response postsResponse = postsUsers(postBody);
+            System.out.println("post-res : " + postsResponse.asString());
+            UsersDataPosts postUserData = postsResponse.as(UsersDataPosts.class);
+            postUserId = postUserData.getId();
+
+            String commentsBody = "{" + "\"post_id\": \""+postUserId+"\"," + "\"email\":\""+userEmail+"\"," + "\"name\": \""+userName+"\"," + "\"body\": \""+userBody+"\"\n" + "}";
+            Response commentsResponse = postCommentsUsers(commentsBody);
+            System.out.println("comm-res : " + commentsResponse.asString());
+            CommentsPostData userDataComm = commentsResponse.as(CommentsPostData.class);
+            commentsId = userDataComm.getId();
+
+            String body = "{" + "\"user_id\": \"" + commentsId + "\"," + "\"title\":\"" + userTitle + "\"," + "\"due_on\": \"" + userDueOn + "\"," + "\"status\": \"" + userStatus + "\"\n" + "}";
             Response response = todosPostUser(body);
             TodosPostData userData = response.as(TodosPostData.class);
-            id = userData.getId();
+            todosUserId = userData.getId();
         }finally {
-            deleteTodosUser(id);
+            deleteTodosUser(todosUserId);
+            deleteCommentsUser(commentsId);
+            deleteUserByIdPosts(postUserId);
+            deleteUser(usersId);
         }
     }
 
