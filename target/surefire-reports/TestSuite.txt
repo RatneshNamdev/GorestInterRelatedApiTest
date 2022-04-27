@@ -1,4 +1,155 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.305 sec
+Tests run: 17, Failures: 17, Errors: 0, Skipped: 0, Time elapsed: 58.105 sec <<< FAILURE!
+createUserThroughPost(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 3.404 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.createUserThroughPost(GorestApiTest.java:47)
+
+getUserByUserId(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 10.798 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getUserByUserId(GorestApiTest.java:83)
+
+updateUserByUserId(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 1.515 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updateUserByUserId(GorestApiTest.java:125)
+
+deleteUserByUserId(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 0.773 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByUserId(GorestApiTest.java:153)
+
+invalidRequestThroughUsers(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 0.773 sec  <<< FAILURE!
+org.json.JSONException: A JSONArray text must start with '[' at 1 [character 2 line 1]
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:521)
+	at org.json.JSONArray.<init>(JSONArray.java:109)
+	at org.json.JSONArray.<init>(JSONArray.java:162)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.invalidRequestThroughUsers(GorestApiTest.java:171)
+
+postsNewUser(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 1.132 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.postsNewUser(GorestApiTest.java:209)
+
+getPostsById(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 2.265 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getPostsById(GorestApiTest.java:244)
+
+updatePostsById(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 2.258 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updatePostsById(GorestApiTest.java:290)
+
+deletePostsById(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 1.158 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deletePostsById(GorestApiTest.java:319)
+
+commentsOnNewUser(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 1.525 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.commentsOnNewUser(GorestApiTest.java:367)
+
+getCommentsByUserId(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 3.502 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getCommentsByUserId(GorestApiTest.java:420)
+
+updateCommentsByUserId(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 3.922 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updateCommentsByUserId(GorestApiTest.java:477)
+
+deleteCommentsByUserId(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 4.087 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsByUserId(GorestApiTest.java:518)
+
+todosNewUser(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 2.576 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.todosNewUser(GorestApiTest.java:579)
+
+getTodosUserById(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 2.319 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getTodosUserById(GorestApiTest.java:643)
+
+updateTodosUserById(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 2.305 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updateTodosUserById(GorestApiTest.java:709)
+
+deleteTodosUserById(com.liseinfotech.gorestApiTest.GorestApiTest)  Time elapsed: 2.289 sec  <<< FAILURE!
+java.lang.AssertionError: 
+Expected: is <204>
+     but: was <404>
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUserById(GorestApiTest.java:763)
+

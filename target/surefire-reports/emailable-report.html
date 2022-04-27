@@ -9,11 +9,160 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Command line suite</th></tr>
-<tr><td><a href="#t0">Command line test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">6,280</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Command line test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">17</td><td class="num">46,646</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.liseinfotech.gorestApiTest.GorestApiTest</td><td><a href="#m0">getUserDetails</a></td><td rowspan="1">1650048172719</td><td rowspan="1">3558</td></tr><tr class="passedeven"><td><a href="#m1">postCreateNewUser</a></td><td rowspan="1">1650048176287</td><td rowspan="1">2676</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="17">com.liseinfotech.gorestApiTest.GorestApiTest</td><td><a href="#m0">commentsOnNewUser</a></td><td rowspan="1">1650714818104</td><td rowspan="1">1525</td></tr><tr class="failedeven"><td><a href="#m1">createUserThroughPost</a></td><td rowspan="1">1650714794018</td><td rowspan="1">3395</td></tr><tr class="failedeven"><td><a href="#m2">deleteCommentsByUserId</a></td><td rowspan="1">1650714827056</td><td rowspan="1">4086</td></tr><tr class="failedeven"><td><a href="#m3">deletePostsById</a></td><td rowspan="1">1650714816946</td><td rowspan="1">1157</td></tr><tr class="failedeven"><td><a href="#m4">deleteTodosUserById</a></td><td rowspan="1">1650714838345</td><td rowspan="1">2288</td></tr><tr class="failedeven"><td><a href="#m5">deleteUserByUserId</a></td><td rowspan="1">1650714809740</td><td rowspan="1">772</td></tr><tr class="failedeven"><td><a href="#m6">getCommentsByUserId</a></td><td rowspan="1">1650714819630</td><td rowspan="1">3502</td></tr><tr class="failedeven"><td><a href="#m7">getPostsById</a></td><td rowspan="1">1650714812420</td><td rowspan="1">2264</td></tr><tr class="failedeven"><td><a href="#m8">getTodosUserById</a></td><td rowspan="1">1650714833720</td><td rowspan="1">2318</td></tr><tr class="failedeven"><td><a href="#m9">getUserByUserId</a></td><td rowspan="1">1650714797424</td><td rowspan="1">10798</td></tr><tr class="failedeven"><td><a href="#m10">invalidRequestThroughUsers</a></td><td rowspan="1">1650714810514</td><td rowspan="1">772</td></tr><tr class="failedeven"><td><a href="#m11">postsNewUser</a></td><td rowspan="1">1650714811288</td><td rowspan="1">1131</td></tr><tr class="failedeven"><td><a href="#m12">todosNewUser</a></td><td rowspan="1">1650714831143</td><td rowspan="1">2576</td></tr><tr class="failedeven"><td><a href="#m13">updateCommentsByUserId</a></td><td rowspan="1">1650714823133</td><td rowspan="1">3921</td></tr><tr class="failedeven"><td><a href="#m14">updatePostsById</a></td><td rowspan="1">1650714814686</td><td rowspan="1">2258</td></tr><tr class="failedeven"><td><a href="#m15">updateTodosUserById</a></td><td rowspan="1">1650714836039</td><td rowspan="1">2304</td></tr><tr class="failedeven"><td><a href="#m16">updateUserByUserId</a></td><td rowspan="1">1650714808224</td><td rowspan="1">1514</td></tr></tbody>
 </table>
-<h2>Command line test</h2><h3 id="m0">com.liseinfotech.gorestApiTest.GorestApiTest#getUserDetails</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.liseinfotech.gorestApiTest.GorestApiTest#postCreateNewUser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Command line test</h2><h3 id="m0">com.liseinfotech.gorestApiTest.GorestApiTest#commentsOnNewUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.commentsOnNewUser(GorestApiTest.java:367)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.liseinfotech.gorestApiTest.GorestApiTest#createUserThroughPost</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.createUserThroughPost(GorestApiTest.java:47)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.liseinfotech.gorestApiTest.GorestApiTest#deleteCommentsByUserId</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsByUserId(GorestApiTest.java:518)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.liseinfotech.gorestApiTest.GorestApiTest#deletePostsById</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deletePostsById(GorestApiTest.java:319)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.liseinfotech.gorestApiTest.GorestApiTest#deleteTodosUserById</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUserById(GorestApiTest.java:763)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.liseinfotech.gorestApiTest.GorestApiTest#deleteUserByUserId</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByUserId(GorestApiTest.java:153)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.liseinfotech.gorestApiTest.GorestApiTest#getCommentsByUserId</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getCommentsByUserId(GorestApiTest.java:420)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.liseinfotech.gorestApiTest.GorestApiTest#getPostsById</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getPostsById(GorestApiTest.java:244)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.liseinfotech.gorestApiTest.GorestApiTest#getTodosUserById</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getTodosUserById(GorestApiTest.java:643)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.liseinfotech.gorestApiTest.GorestApiTest#getUserByUserId</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getUserByUserId(GorestApiTest.java:83)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">com.liseinfotech.gorestApiTest.GorestApiTest#invalidRequestThroughUsers</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.json.JSONException: A JSONArray text must start with &apos;[&apos; at 1 [character 2 line 1]
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:521)
+	at org.json.JSONArray.&lt;init&gt;(JSONArray.java:109)
+	at org.json.JSONArray.&lt;init&gt;(JSONArray.java:162)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.invalidRequestThroughUsers(GorestApiTest.java:171)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">com.liseinfotech.gorestApiTest.GorestApiTest#postsNewUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.postsNewUser(GorestApiTest.java:209)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">com.liseinfotech.gorestApiTest.GorestApiTest#todosNewUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.todosNewUser(GorestApiTest.java:579)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">com.liseinfotech.gorestApiTest.GorestApiTest#updateCommentsByUserId</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updateCommentsByUserId(GorestApiTest.java:477)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">com.liseinfotech.gorestApiTest.GorestApiTest#updatePostsById</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updatePostsById(GorestApiTest.java:290)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">com.liseinfotech.gorestApiTest.GorestApiTest#updateTodosUserById</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updateTodosUserById(GorestApiTest.java:709)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">com.liseinfotech.gorestApiTest.GorestApiTest#updateUserByUserId</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updateUserByUserId(GorestApiTest.java:125)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

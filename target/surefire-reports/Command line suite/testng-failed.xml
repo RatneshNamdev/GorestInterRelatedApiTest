@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test thread-count="5" verbose="0" name="Command line test(failed)">
+    <classes>
+      <class name="com.liseinfotech.gorestApiTest.GorestApiTest">
+        <methods>
+          <include name="getTodosUserById"/>
+          <include name="getCommentsByUserId"/>
+          <include name="createUserThroughPost"/>
+          <include name="postsNewUser"/>
+          <include name="invalidRequestThroughUsers"/>
+          <include name="commentsOnNewUser"/>
+          <include name="getPostsById"/>
+          <include name="todosNewUser"/>
+          <include name="deletePostsById"/>
+          <include name="deleteCommentsByUserId"/>
+          <include name="getUserByUserId"/>
+          <include name="updateTodosUserById"/>
+          <include name="deleteTodosUserById"/>
+          <include name="updateCommentsByUserId"/>
+          <include name="updatePostsById"/>
+          <include name="deleteUserByUserId"/>
+          <include name="beforeSuite"/>
+          <include name="updateUserByUserId"/>
+        </methods>
+      </class> <!-- com.liseinfotech.gorestApiTest.GorestApiTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

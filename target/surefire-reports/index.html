@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 17 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Command_line_suite">
-              <span class="suite-name border-passed">Command line suite</span>
+              <span class="suite-name border-failed">Command line suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,26 +93,101 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">17 methods, 17 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Command_line_suite" class="hide-methods passed suite-Command_line_suite"> (hide)</a> <!-- hide-methods passed suite-Command_line_suite -->
-                      <a href="#" panel-name="suite-Command_line_suite" class="show-methods passed suite-Command_line_suite"> (show)</a> <!-- show-methods passed suite-Command_line_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Command_line_suite" class="hide-methods failed suite-Command_line_suite"> (hide)</a> <!-- hide-methods failed suite-Command_line_suite -->
+                      <a href="#" panel-name="suite-Command_line_suite" class="show-methods failed suite-Command_line_suite"> (show)</a> <!-- show-methods failed suite-Command_line_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Command_line_suite">
+                    <div class="method-list-content failed suite-Command_line_suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="getUserDetails">getUserDetails</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="commentsOnNewUser">commentsOnNewUser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="postCreateNewUser">postCreateNewUser</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="createUserThroughPost">createUserThroughPost</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Command_line_suite -->
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="deleteCommentsByUserId">deleteCommentsByUserId</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="deletePostsById">deletePostsById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="deleteTodosUserById">deleteTodosUserById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="deleteUserByUserId">deleteUserByUserId</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="getCommentsByUserId">getCommentsByUserId</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="getPostsById">getPostsById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="getTodosUserById">getTodosUserById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="getUserByUserId">getUserByUserId</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="invalidRequestThroughUsers">invalidRequestThroughUsers</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="postsNewUser">postsNewUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="todosNewUser">todosNewUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="updateCommentsByUserId">updateCommentsByUserId</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="updatePostsById">updatePostsById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="updateTodosUserById">updateTodosUserById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="com.liseinfotech.gorestApiTest.GorestApiTest" hash-for-method="updateUserByUserId">updateUserByUserId</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Command_line_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -124,28 +199,301 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Command_line_suite" class="panel Command_line_suite">
-          <div class="suite-Command_line_suite-class-passed">
+          <div class="suite-Command_line_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.liseinfotech.gorestApiTest.GorestApiTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="getUserDetails">
-                  </a> <!-- getUserDetails -->
-                  <span class="method-name">getUserDetails</span>
+                  <a name="commentsOnNewUser">
+                  </a> <!-- commentsOnNewUser -->
+                  <span class="method-name">commentsOnNewUser</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.commentsOnNewUser(GorestApiTest.java:367)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="postCreateNewUser">
-                  </a> <!-- postCreateNewUser -->
-                  <span class="method-name">postCreateNewUser</span>
+                  <a name="createUserThroughPost">
+                  </a> <!-- createUserThroughPost -->
+                  <span class="method-name">createUserThroughPost</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.createUserThroughPost(GorestApiTest.java:47)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteCommentsByUserId">
+                  </a> <!-- deleteCommentsByUserId -->
+                  <span class="method-name">deleteCommentsByUserId</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsByUserId(GorestApiTest.java:518)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deletePostsById">
+                  </a> <!-- deletePostsById -->
+                  <span class="method-name">deletePostsById</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deletePostsById(GorestApiTest.java:319)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteTodosUserById">
+                  </a> <!-- deleteTodosUserById -->
+                  <span class="method-name">deleteTodosUserById</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUserById(GorestApiTest.java:763)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteUserByUserId">
+                  </a> <!-- deleteUserByUserId -->
+                  <span class="method-name">deleteUserByUserId</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByUserId(GorestApiTest.java:153)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getCommentsByUserId">
+                  </a> <!-- getCommentsByUserId -->
+                  <span class="method-name">getCommentsByUserId</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getCommentsByUserId(GorestApiTest.java:420)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getPostsById">
+                  </a> <!-- getPostsById -->
+                  <span class="method-name">getPostsById</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getPostsById(GorestApiTest.java:244)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getTodosUserById">
+                  </a> <!-- getTodosUserById -->
+                  <span class="method-name">getTodosUserById</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getTodosUserById(GorestApiTest.java:643)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getUserByUserId">
+                  </a> <!-- getUserByUserId -->
+                  <span class="method-name">getUserByUserId</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.getUserByUserId(GorestApiTest.java:83)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="invalidRequestThroughUsers">
+                  </a> <!-- invalidRequestThroughUsers -->
+                  <span class="method-name">invalidRequestThroughUsers</span>
+                  <div class="stack-trace">org.json.JSONException: A JSONArray text must start with &apos;[&apos; at 1 [character 2 line 1]
+	at org.json.JSONTokener.syntaxError(JSONTokener.java:521)
+	at org.json.JSONArray.&lt;init&gt;(JSONArray.java:109)
+	at org.json.JSONArray.&lt;init&gt;(JSONArray.java:162)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.invalidRequestThroughUsers(GorestApiTest.java:171)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="postsNewUser">
+                  </a> <!-- postsNewUser -->
+                  <span class="method-name">postsNewUser</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.postsNewUser(GorestApiTest.java:209)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="todosNewUser">
+                  </a> <!-- todosNewUser -->
+                  <span class="method-name">todosNewUser</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.todosNewUser(GorestApiTest.java:579)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="updateCommentsByUserId">
+                  </a> <!-- updateCommentsByUserId -->
+                  <span class="method-name">updateCommentsByUserId</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteCommentsUser(GorestApiTest.java:951)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updateCommentsByUserId(GorestApiTest.java:477)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="updatePostsById">
+                  </a> <!-- updatePostsById -->
+                  <span class="method-name">updatePostsById</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUserByIdPosts(GorestApiTest.java:889)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updatePostsById(GorestApiTest.java:290)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="updateTodosUserById">
+                  </a> <!-- updateTodosUserById -->
+                  <span class="method-name">updateTodosUserById</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteTodosUser(GorestApiTest.java:1013)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updateTodosUserById(GorestApiTest.java:709)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="updateUserByUserId">
+                  </a> <!-- updateUserByUserId -->
+                  <span class="method-name">updateUserByUserId</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+Expected: is &lt;204&gt;
+     but: was &lt;404&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:18)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.deleteUser(GorestApiTest.java:827)
+	at com.liseinfotech.gorestApiTest.GorestApiTest.updateUserByUserId(GorestApiTest.java:125)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 37 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Command_line_suite-class-passed -->
+          </div> <!-- suite-Command_line_suite-class-failed -->
         </div> <!-- panel Command_line_suite -->
         <div panel-name="test-xml-Command_line_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -157,8 +505,8 @@
 &lt;suite verbose=&quot;0&quot; name=&quot;Command line suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Command line test&quot;&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;com.liseinfotech.gorestApiTest.steps.BaseTest&quot;/&gt;
       &lt;class name=&quot;com.liseinfotech.gorestApiTest.GorestApiTest&quot;/&gt;
-      &lt;class name=&quot;com.liseinfotech.gorestApiTest.BaseTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Command line test --&gt;
 &lt;/suite&gt; &lt;!-- Command line suite --&gt;
@@ -198,20 +546,80 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(17);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'getUserDetails')
+data.setCell(0, 1, 'getUserByUserId')
 data.setCell(0, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
-data.setCell(0, 3, 3558);
+data.setCell(0, 3, 10798);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'postCreateNewUser')
+data.setCell(1, 1, 'deleteCommentsByUserId')
 data.setCell(1, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
-data.setCell(1, 3, 2676);
+data.setCell(1, 3, 4086);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'updateCommentsByUserId')
+data.setCell(2, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(2, 3, 3921);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'getCommentsByUserId')
+data.setCell(3, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(3, 3, 3502);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'createUserThroughPost')
+data.setCell(4, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(4, 3, 3395);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'todosNewUser')
+data.setCell(5, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(5, 3, 2576);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'getTodosUserById')
+data.setCell(6, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(6, 3, 2318);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'updateTodosUserById')
+data.setCell(7, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(7, 3, 2304);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'deleteTodosUserById')
+data.setCell(8, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(8, 3, 2288);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'getPostsById')
+data.setCell(9, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(9, 3, 2264);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'updatePostsById')
+data.setCell(10, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(10, 3, 2258);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'commentsOnNewUser')
+data.setCell(11, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(11, 3, 1525);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'updateUserByUserId')
+data.setCell(12, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(12, 3, 1514);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'deletePostsById')
+data.setCell(13, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(13, 3, 1157);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'postsNewUser')
+data.setCell(14, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(14, 3, 1131);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'deleteUserByUserId')
+data.setCell(15, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(15, 3, 772);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'invalidRequestThroughUsers')
+data.setCell(16, 2, 'com.liseinfotech.gorestApiTest.GorestApiTest')
+data.setCell(16, 3, 772);
 window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <span class="suite-total-time">Total running time: 46 seconds</span>
               <div id="times-div-Command_line_suite">
               </div> <!-- times-div-Command_line_suite -->
             </div> <!-- times-div -->
@@ -230,7 +638,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.liseinfotech.gorestApiTest.BaseTest</span>
+              <span class="ignored-class-name">com.liseinfotech.gorestApiTest.GorestApiTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">beforeSuite</span>
                 <br/>
@@ -244,18 +652,115 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.liseinfotech.gorestApiTest.GorestApiTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.liseinfotech.gorestApiTest.steps.BaseTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">beforeSuite</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.liseinfotech.gorestApiTest.GorestApiTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">getUserDetails</span>
-                <span class="method-start">1047 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">createUserThroughPost</span>
+                <span class="method-start">628 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">postCreateNewUser</span>
-                <span class="method-start">4615 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">getUserByUserId</span>
+                <span class="method-start">4034 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">updateUserByUserId</span>
+                <span class="method-start">14834 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">deleteUserByUserId</span>
+                <span class="method-start">16350 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">invalidRequestThroughUsers</span>
+                <span class="method-start">17124 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">postsNewUser</span>
+                <span class="method-start">17898 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">getPostsById</span>
+                <span class="method-start">19030 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">updatePostsById</span>
+                <span class="method-start">21296 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">deletePostsById</span>
+                <span class="method-start">23556 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">commentsOnNewUser</span>
+                <span class="method-start">24714 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">getCommentsByUserId</span>
+                <span class="method-start">26240 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">updateCommentsByUserId</span>
+                <span class="method-start">29743 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">deleteCommentsByUserId</span>
+                <span class="method-start">33666 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">todosNewUser</span>
+                <span class="method-start">37753 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">getTodosUserById</span>
+                <span class="method-start">40330 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">updateTodosUserById</span>
+                <span class="method-start">42649 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">deleteTodosUserById</span>
+                <span class="method-start">44955 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
